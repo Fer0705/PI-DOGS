@@ -1,0 +1,17 @@
+/* .notFound {
+    background-image: url(https://st2.depositphotos.com/3477229/11722/v/950/depositphotos_117229862-stock-illustration-error-page-not-found-cartoon.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+} */
+.videonotfound{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    /* min-width: 100%;
+    min-height: 100%; */
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    margin: auto;
+}

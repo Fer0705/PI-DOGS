@@ -1,0 +1,20 @@
+.search {
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 0.7px solid black;
+    width: 20%;
+}
+
+.searchBut{
+    font-size: 20px;
+    border-radius: 9x;
+    margin-left: 5px;
+}
+
+.land{
+    font-size: 20px;
+    border-radius: 9x;
+    margin-left: 295px;
+}

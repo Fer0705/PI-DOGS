@@ -1,0 +1,122 @@
+
+.createDog{
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9770, 0 0 40px #ff9770, 0 0 50px #ff9770, 0 0 60px #ff9770, 0 0 70px #ff9770;
+    font-size: 120px;
+    font-family: 'Dancing Script', cursive;
+    
+}
+
+.formu{
+    margin: 0 auto;
+    width: 300px; 
+    background-color: rgba(239, 201, 148, 0.824);
+    /* background-color: rgba(49, 43, 32, 0.473); */
+    border: 2px solid black;   
+    box-shadow: 0px 0px 30px rgb(31, 24, 4);
+    width: 70%;   
+}
+
+label {
+    display: block;
+    margin: .5em 0 0 0;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 5px;
+    font-family: cursive;
+   
+}
+
+div {
+    margin: .4em 0;
+  }
+
+div label {
+    width: 25%;
+    float: left;
+  }
+
+
+.formu h2 {
+    color: rgb(28, 4, 4)
+}
+
+input{
+    border: 1px solid black;
+    border-radius: 6px;
+    width: 60%;
+    height: 30px;
+    margin-left: 33px;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px rgb(2, 24, 7);
+    padding: 5px;
+    
+}
+
+.selecTemp {
+    margin-top: 10px;
+    margin-left: 33px;
+    width: 60%;
+    border-radius: 15px;
+}
+
+/* .lista{
+    list-style:none;
+} */
+
+.container h4{
+    margin-top: 2px;
+    color: rgba(202, 14, 14, 0.979);    
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    /* -webkit-text-stroke:  0.5px rgb(48, 5, 5); */
+   
+}
+
+.butCreate{
+    width: 60%;
+    margin-bottom: 6px;
+    margin-left: 45px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 15px
+}
+.butCreate:hover{
+    background-color: rgb(183, 226, 183);
+}
+
+.back{
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size:medium
+    
+}
+
+/* .delete{
+    float: left;
+    padding-right: 20px;
+} */
+
+.delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.deleteButton{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 2px;
+ margin-left: 5px;
+ border-radius: 4px;
+}
+
+.deleteButton:hover{
+    background-color: #d00000;
+}
+
+.temp{
+    font-weight: bold;
+}

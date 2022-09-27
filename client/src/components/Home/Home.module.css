@@ -1,0 +1,72 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inspiration&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Akaya+Kanadaka&family=Dancing+Script:wght@700&display=swap');
+
+select {
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+select:hover {
+  background-color: #e4ccc3;
+}
+
+.title {
+  text-align: center;
+  /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9770, 0 0 40px #ff9770,
+    0 0 50px #ff9770, 0 0 60px #ff9770, 0 0 70px #ff9770; */
+  font-size: 120px;
+  /* font-family: "Indie Flower", cursive; */
+  font-family: 'Dancing Script', cursive;
+}
+
+button {
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e4ccc3;
+}
+
+.homeCard {
+  display: grid;
+  grid-template-columns: repeat(2, 5fr);
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
+}
+
+body {
+  background: url(C:\Users\morta\Desktop\Downloads\PI-Dogs-main\PI-Dogs-main\client\src\img\fondoHome.PNG)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .homeCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homeCard img {
+    width: 80%;
+  }
+
+  .paginado{
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+  }
+ 
+}
+.paginado {
+  display: flex;
+  flex-direction: column;
+}
