@@ -1,0 +1,12 @@
+.but{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+  }
+
+  /* .refresh{
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+  } */

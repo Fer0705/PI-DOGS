@@ -18,6 +18,7 @@ select:hover {
   font-size: 120px;
   /* font-family: "Indie Flower", cursive; */
   font-family: 'Dancing Script', cursive;
+  margin-top: -45px;
 }
 
 button {
@@ -70,3 +71,4 @@ body {
   display: flex;
   flex-direction: column;
 }
+

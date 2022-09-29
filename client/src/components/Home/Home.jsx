@@ -14,6 +14,7 @@ import style from "../Home/Home.module.css";
 import Card from "../Card/Card";
 import Paginado from "../Paginado/Paginado";
 import SearchBar from "../SearchBar/SearchBar";
+import NavBar from "../NavBar/NavBar";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -39,10 +40,10 @@ export default function Home() {
     dispatch(getTemperament()); //despachamos la accion que devuelve todos los temperamentos
   }, [dispatch]);
 
-  function handleClick(e) {
-    e.preventDefault();
-    dispatch(getAllDogs());
-  }
+  // function handleClick(e) {
+  //   e.preventDefault();
+  //   dispatch(getAllDogs());
+  // }
 
   function handleFilterByTemperament(e) {
     e.preventDefault();
@@ -65,21 +66,21 @@ export default function Home() {
   function handleOrderByWeight(e) {
     e.preventDefault();
     dispatch(orderByWeight(e.target.value));
-    setCurrentPage(1);
+    setCurrentPage(1); 
     setOrden(`Ordenado ${e.target.value}`);
-    console.log(setOrden);
+    console.log("SOY SET ORDER", setOrden);
   }
 
+
+  
   return (
     <div className={style.home}>
+      <NavBar />
+
       <h1 className={style.title}>Welcome to Dog World</h1>
 
       <SearchBar />
-
-      <Link to="/dog">
-        <button className={style.createDog}>CREATE DOG</button>
-      </Link>
-
+    {/*------- ORDEN ALFABETICO----- */}
       <select
         onChange={(e) => {
           handleOrderByName(e);
@@ -89,7 +90,7 @@ export default function Home() {
         <option value="ascendente">A-Z</option>
         <option value="descendente">Z-A</option>
       </select>
-
+    {/*------- ORDEN POR PESO----- */}
       <select
         onChange={(e) => {
           handleOrderByWeight(e);
@@ -99,7 +100,7 @@ export default function Home() {
         <option value="weightMin">Min weight</option>
         <option value="weightMax">Max weight</option>
       </select>
-
+    {/*-------FILTRADO TEMP----- */}
       <select
         onChange={(e) => {
           handleFilterByTemperament(e);
@@ -114,8 +115,8 @@ export default function Home() {
             </option>
           ))}
       </select>
-
-      <select
+    {/*--------FILTRADO CREATE---- */}
+       <select
         onChange={(e) => {
           handleFilterCreated(e);
         }}
@@ -126,26 +127,6 @@ export default function Home() {
         <option value="dataBase">Created</option>
       </select>
 
-      <button
-        className={style.refresh}
-        onClick={(e) => {
-          handleClick(e);
-        }}
-      >
-        REFRESH
-      </button>
-
-      <Link to="/">
-            <button className={style.land}>
-              BACK LANDING
-            </button>
-            </Link>
-
-      {/* <Paginado
-        dogsForPage={dogsForPage}
-        allDogs={allDogs.length} // .length xq necesito un valor numerico
-        paginado={paginado}
-      /> */}
       <div className={style.homeCard}>
         {currentDogs &&
           currentDogs.map((d) => {
@@ -165,14 +146,12 @@ export default function Home() {
               </div>
             );
           })}
-          
-        
       </div>
-        <Paginado
-          dogsForPage={dogsForPage}
-          allDogs={allDogs.length} // .length xq necesito un valor numerico
-          paginado={paginado}
-        />
+      <Paginado
+        dogsForPage={dogsForPage}
+        allDogs={allDogs.length} // .length xq necesito un valor numerico
+        paginado={paginado}
+      />
     </div>
   );
 }

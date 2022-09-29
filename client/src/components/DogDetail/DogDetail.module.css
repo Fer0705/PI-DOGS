@@ -27,3 +27,8 @@ margin: 9px;
     
 }
 
+.cardDetail img:hover {
+    width: 60%;
+    height: 60%;
+    cursor:pointer;
+}

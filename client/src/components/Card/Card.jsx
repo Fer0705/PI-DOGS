@@ -9,6 +9,7 @@ export default function Card({ name, weight, image, temperament }) {
         <img src={image} alt="img dog" width="500px" height="350px" />
         <h4>{weight} kg</h4>
         <h4>{temperament}</h4>
+        
       </div>
     
   );

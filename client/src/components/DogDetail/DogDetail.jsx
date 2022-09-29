@@ -19,6 +19,7 @@ export default function DogDetail() {
   const detail = useSelector((state) => state.dogDetail);
 
   return (
+    
     <div className={style.cardDetail}>
       <h1>{detail.name}</h1>
       <img src={detail.image} alt="img dog" width="550px" height="350px" />
@@ -35,6 +36,6 @@ export default function DogDetail() {
       <Link to="/home">
         <button>BACK HOME</button>
       </Link>
-    </div>
+    </div> 
   );
 }

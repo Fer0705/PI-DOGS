@@ -23,6 +23,19 @@ export function getAllDogs() {
   }
 }
 
+// export function getAllDogs() {
+//   return function (dispatch){
+//    axios.get("http://localhost:3001/dogs")
+//     .then((data) => {
+//       return dispatch({
+//         type: GET_ALL_DOGS,
+//         payload: data
+//       })
+//     })
+//   }
+// }
+
+
 export function getTemperament() {
   return async function(dispatch){
     let temp = await axios.get("http://localhost:3001/temperaments")
