@@ -25,40 +25,14 @@ const getInfoApi = async () => {
       weightMax: r.weight.metric.slice(4).trim(),
       heightMin: r.height.metric.slice(0, 2).trim(),
       heightMax: r.height.metric.slice(4).trim(),
-      life_span: r.life_span, // "4 - 12 years" .slice(0, 2).trim(), .slice(4, 6).trim()
+      life_span: r.life_span,
       image: r.image.url,
-      temperament: r.temperament
+      temperament: r.temperament,
     };
   });
 
   return infoApi;
 };
-
-// const getInfoApi = () => {
-//   axios
-//     .get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
-//     .then((data) =>
-//       data.map((r) => {
-//         return {
-//           id: r.id,
-//           name: r.name,
-//           weightMin: r.weight.metric.slice(0, 2).trim(),
-//           weightMax: r.weight.metric.slice(4).trim(),
-//           heightMin: r.height.metric.slice(0, 2).trim(),
-//           heightMax: r.height.metric.slice(4).trim(),
-//           life_span: r.life_span,
-//           image: r.image.url,
-//           temperament: r.temperament,
-//         };
-//       })
-//     )
-//     .then((data) => {
-//       return data
-//     })
-//     .catch(function(err){
-//       console.log(err); //mostramos el error por consola. Veremos que es el que falló primero, o sea el del primer metodo
-//      })
-// };
 
 const getDbInfo = async () => {
   return await Dog.findAll({
@@ -91,7 +65,7 @@ const getTemperament = async () => {
       return d.temperament;
     }) //["curioso ", "jugueton", "docil"] ["docil, jugueton, curioso ", ""]
     .join() //unilo con la condicion de separlos con coma
-    .split(",")                                                         
+    .split(",");
 
   const temps = [];
 
@@ -113,28 +87,25 @@ const getTemperament = async () => {
 router.get("/dogs", async (req, res) => {
   const { name } = req.query;
   let allDogs = await getAlldogs(); //espero el resultado de esta funcion que es la que me trae TODOS los dogs
-try {
-  if (name) {
-    let nameDog = allDogs.filter((dog) =>
-      dog.name.toLowerCase().includes(name.toLowerCase())
-    ); //await demas
-    nameDog.length
-      ? res.status(200).send(nameDog)
-      : res
-          .status(404)
-          .send(
-            "The breed you are looking for could not be found, please try another."
-          );
-  } else {
-    res.status(200).send(allDogs);
+  try {
+    if (name) {
+      let nameDog = allDogs.filter((dog) =>
+        dog.name.toLowerCase().includes(name.toLowerCase())
+      ); //await demas
+      nameDog.length
+        ? res.status(200).send(nameDog)
+        : res
+            .status(404)
+            .send(
+              "The breed you are looking for could not be found, please try another."
+            );
+    } else {
+      res.status(200).send(allDogs);
+    }
+  } catch (error) {
+    res.status(404).json(error);
   }
-} catch (error) {
-  res.status(404).json(error)
-}
-  
-  
 });
-
 
 router.get("/dogs/:idRaza", async (req, res) => {
   const { idRaza } = req.params;
@@ -217,53 +188,32 @@ router.post("/dogs", async (req, res) => {
 //   console.log(nameTemp);
 // });
 
-router.get('/temperaments' , async (req, res) => {
+router.get("/temperaments", async (req, res) => {
   try {
-    await getTemperament()
-    const allTemperament = await Temperament.findAll()
-    const nameTemp = await allTemperament.map(t => t.name)
-    res.status(200).json(nameTemp)
+    await getTemperament();
+    const allTemperament = await Temperament.findAll();
+    const nameTemp = await allTemperament.map((t) => t.name);
+    res.status(200).json(nameTemp);
   } catch (error) {
-    res.status(404).json(error)
-  }
-})
-
-router.delete("/delete/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const dog = await Dog.findByPk(id);
-    if (!dog) {
-      res.status(404).send("dog not available");
-    } else {
-      await dog.destroy();
-      res.status(200).send("Dog removed");
-    }
-  } catch (error) {
-    res.status(400).json(error);
+    res.status(404).json(error);
   }
 });
+
+// router.delete("/delete/:id", async (req, res) => {
+//   const { id } = req.params;
+//   try {
+//     const dog = await Dog.findByPk(id);
+//     if (!dog) {
+//       res.status(404).send("dog not available");
+//     } else {
+//       await dog.destroy();
+//       res.status(200).send("Dog removed");
+//     }
+//   } catch (error) {
+//     res.status(400).json(error);
+//   }
+// });
 
 module.exports = router;
 
 
-
-// router.get("/dogs", async (req, res) => {
-//   const { name } = req.query;
-//   let allDogs = await getAlldogs(); //espero el resultado de esta funcion que es la que me trae TODOS los dogs
-
-//   if (name) {
-//     let nameDog = allDogs.filter((dog) =>
-//       dog.name.toLowerCase().includes(name.toLowerCase())
-//     ); //await demas
-//     nameDog.length
-//       ? res.status(200).send(nameDog)
-//       : res
-//           .status(404)
-//           .send(
-//             "The breed you are looking for could not be found, please try another."
-//           );
-//   } else {
-//     res.status(200).send(allDogs);
-//   }
-  
-// });
