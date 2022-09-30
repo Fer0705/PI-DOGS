@@ -28,7 +28,6 @@ const getInfoApi = async () => {
       life_span: r.life_span,
       image: r.image.url,
       temperament: r.temperament,
-      
     };
   });
 
@@ -99,7 +98,7 @@ router.get("/dogs", async (req, res) => {
     if (name) {
       let nameDog = allDogs.filter((dog) =>
         dog.name.toLowerCase().includes(name.toLowerCase())
-      ); 
+      );
       nameDog.length
         ? res.status(200).send(nameDog)
         : res
@@ -223,5 +222,3 @@ router.get("/temperaments", async (req, res) => {
 // });
 
 module.exports = router;
-
-
