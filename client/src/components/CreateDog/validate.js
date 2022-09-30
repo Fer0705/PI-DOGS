@@ -46,8 +46,8 @@ export function validate(input) {
       //CharAt me devuelve el valor en la posicion solicitada, aqui usamos +1 de la posicion donde se encuentre el '-';
       errors.life_span = "There must be a number behind the '-'";
     } else if (
-      parseInt(input.life_span.split("-")[0]) >=
-      parseInt(input.life_span.split("-")[1])
+      Number(input.life_span.split("-")[0]) >=
+      Number(input.life_span.split("-")[1])
     ) {
       errors.life_span = "The min year must be less than the max year";
     } else if (regexNumLifeSpan.test(input.life_span) === false) {

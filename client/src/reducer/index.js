@@ -21,6 +21,7 @@ const initialState = {
   temperaments: [],
   // loading: true,
   // error: false,
+ 
 };
 
 function rootReducer(state = initialState, action) {
@@ -57,7 +58,7 @@ function rootReducer(state = initialState, action) {
         ...state,
       };
     case FILTER_BY_CREATED:
-      const allDogs = state.allDogs;
+      const allDogs = state.allDogs; //!!vuelvo a cambiar probando sort de ruta, sino vuelvo a dogs
       const createFilter =
         action.payload === "dataBase"
           ? allDogs.filter((d) => d.createDb)

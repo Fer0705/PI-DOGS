@@ -8,10 +8,10 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    /* min-width: 100%;
-    min-height: 100%; */
     width: 100vw;
     height: 100vh;
     background-color: black;
     margin: auto;
+    /* min-width: 100%;
+    min-height: 100%; */
 }

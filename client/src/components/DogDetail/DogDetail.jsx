@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getClean, getDetail } from "../../actions";
 import style from "../DogDetail/DogDetail.module.css";
@@ -7,17 +7,20 @@ import style from "../DogDetail/DogDetail.module.css";
 export default function DogDetail() {
   const dispatch = useDispatch();
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getDetail(id));
-
-    return () => {
-      dispatch(getClean());
-    };
+    dispatch(getClean());
   }, [dispatch, id]);
 
   const detail = useSelector((state) => state.dogDetail);
 
+function handleClick(e){
+  e.preventDefault(e)
+  history.push("/home")
+}
+   
   return (
     
     <div className={style.cardDetail}>
@@ -33,9 +36,13 @@ export default function DogDetail() {
         {detail.createDb ? `${detail.life_span}  years` : detail.life_span}
       </h2>
 
-      <Link to="/home">
+      
+
+      {/* <Link to="/home">
         <button>BACK HOME</button>
-      </Link>
+      </Link> */}
+
+      <button onClick={handleClick} >BACK HOME</button>
     </div> 
   );
 }

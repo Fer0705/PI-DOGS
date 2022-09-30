@@ -12,7 +12,7 @@ import {
 } from "../../actions";
 import style from "../Home/Home.module.css";
 import Card from "../Card/Card";
-import Paginado from "../Paginado/Paginado";
+import Paginated from "../Paginated/Paginated";
 import SearchBar from "../SearchBar/SearchBar";
 import NavBar from "../NavBar/NavBar";
 
@@ -23,56 +23,49 @@ export default function Home() {
 
   const [currentPage, setCurrentPage] = useState(1); //estado local con la primer pagina que se renderiza
   const [dogsForPage, setDogsForPage] = useState(8); // estado local con la cantidad de perros que quiero por pagina
-  const indexLastDog = currentPage * dogsForPage;
-  const indexFirstDog = indexLastDog - dogsForPage;
+  const indexLastDog = currentPage * dogsForPage; // 16
+  const indexFirstDog = indexLastDog - dogsForPage; // 8
   const currentDogs = allDogs.slice(indexFirstDog, indexLastDog);
 
-  const paginado = (pageNumber) => {
+  const paginated = (pageNumber) => {
     // me ayuda con el renderizado
     setCurrentPage(pageNumber);
   };
 
   const [orden, setOrden] = useState("");
 
-  //traemos del estado los perros cuando el componente se monta ->
   useEffect(() => {
     dispatch(getAllDogs()); //despachamos la accion que devuelve todos los perros
     dispatch(getTemperament()); //despachamos la accion que devuelve todos los temperamentos
   }, [dispatch]);
 
-  // function handleClick(e) {
-  //   e.preventDefault();
-  //   dispatch(getAllDogs());
-  // }
-
   function handleFilterByTemperament(e) {
     e.preventDefault();
     dispatch(filterDogsbyTemperament(e.target.value)); //toma como payload el value que elige el usuario
     // setName(e.target.value)
+    //setCurrentPage(1)
   }
 
   function handleFilterCreated(e) {
     e.preventDefault();
     dispatch(filterCreated(e.target.value));
+    //setCurrentPage(1)
   }
 
   function handleOrderByName(e) {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
     setCurrentPage(1); //cuando hago el ordenamiento seteo la pagina en 1 -> pagina principal
-    setOrden(`Ordenado ${e.target.value}`); // modifico el estado local para que el front haga el ordenamiento
+    setOrden(`Sorted ${e.target.value}`); // modifico el estado local para que el front haga el ordenamiento
   } // empieza en estado local vacio y lo modifico/seteo para que se renderize ordenado de tal forma
 
   function handleOrderByWeight(e) {
     e.preventDefault();
     dispatch(orderByWeight(e.target.value));
-    setCurrentPage(1); 
-    setOrden(`Ordenado ${e.target.value}`);
-    console.log("SOY SET ORDER", setOrden);
+    setCurrentPage(1);
+    setOrden(`Sorted ${e.target.value}`);
   }
 
-
-  
   return (
     <div className={style.home}>
       <NavBar />
@@ -80,7 +73,7 @@ export default function Home() {
       <h1 className={style.title}>Welcome to Dog World</h1>
 
       <SearchBar />
-    {/*------- ORDEN ALFABETICO----- */}
+      {/*------- ORDEN ALFABETICO----- */}
       <select
         onChange={(e) => {
           handleOrderByName(e);
@@ -90,7 +83,7 @@ export default function Home() {
         <option value="ascendente">A-Z</option>
         <option value="descendente">Z-A</option>
       </select>
-    {/*------- ORDEN POR PESO----- */}
+      {/*------- ORDEN POR PESO----- */}
       <select
         onChange={(e) => {
           handleOrderByWeight(e);
@@ -100,7 +93,7 @@ export default function Home() {
         <option value="weightMin">Min weight</option>
         <option value="weightMax">Max weight</option>
       </select>
-    {/*-------FILTRADO TEMP----- */}
+      {/*-------FILTRADO TEMP----- */}
       <select
         onChange={(e) => {
           handleFilterByTemperament(e);
@@ -115,8 +108,8 @@ export default function Home() {
             </option>
           ))}
       </select>
-    {/*--------FILTRADO CREATE---- */}
-       <select
+      {/*--------FILTRADO CREATE---- */}
+      <select
         onChange={(e) => {
           handleFilterCreated(e);
         }}
@@ -126,6 +119,13 @@ export default function Home() {
         <option value="api">Existing</option>
         <option value="dataBase">Created</option>
       </select>
+
+      <Paginated
+        dogsForPage={dogsForPage}
+        allDogs={allDogs.length} // .length xq necesito un valor numerico
+        paginated={paginated}
+        currentPage={currentPage}
+      />
 
       <div className={style.homeCard}>
         {currentDogs &&
@@ -147,11 +147,11 @@ export default function Home() {
             );
           })}
       </div>
-      <Paginado
+      {/* <Paginado
         dogsForPage={dogsForPage}
         allDogs={allDogs.length} // .length xq necesito un valor numerico
         paginado={paginado}
-      />
+      /> */}
     </div>
   );
 }

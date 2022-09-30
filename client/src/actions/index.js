@@ -13,27 +13,17 @@ export const SET_LOADING = "SET_LOADING"
 export const ERROR = "ERROR"
 export const DELETE_DOG = "DELETE_DOG"
 
+
+
 export function getAllDogs() {
   return async function (dispatch) {
     let dogs = await axios.get("http://localhost:3001/dogs");
     return dispatch({
         type: GET_ALL_DOGS,
-        payload: dogs.data
+        payload: dogs.data  //.origin
     })
   }
 }
-
-// export function getAllDogs() {
-//   return function (dispatch){
-//    axios.get("http://localhost:3001/dogs")
-//     .then((data) => {
-//       return dispatch({
-//         type: GET_ALL_DOGS,
-//         payload: data
-//       })
-//     })
-//   }
-// }
 
 
 export function getTemperament() {
@@ -127,6 +117,7 @@ export function getClean() {
 //      type: SET_LOADING 
 //     };
 // };
+
 // export function setError() {
 //   return {
 //      type: ERROR
@@ -146,4 +137,14 @@ export function getClean() {
 // });
 //   }
 // }
+// }
+
+// export function deleteDog(id) {
+//   return async function (dispatch) {
+//     await axios.delete(`http://localhost:3001/delete/${id}`);
+//     return dispatch({
+//         type: DELETE_DOG,
+        
+//     })
+//   }
 // }
