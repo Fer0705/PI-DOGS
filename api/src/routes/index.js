@@ -28,6 +28,7 @@ const getInfoApi = async () => {
       life_span: r.life_span,
       image: r.image.url,
       temperament: r.temperament,
+      
     };
   });
 
@@ -53,6 +54,13 @@ const getAlldogs = async () => {
   const dbInfo = await getDbInfo();
   const completeInfo = [...apiInfo, ...dbInfo]; //apiInfo.concat(dbInfo)
 
+  // const all = completeInfo.sort(function (a, b) {
+  //   if (a.name > b.name) return 1;
+  //   if (b.name > a.name) return -1;
+  //   return 0;
+  // })
+  // return all;
+
   return completeInfo;
 };
 
@@ -63,9 +71,9 @@ const getTemperament = async () => {
   const allTemperament = await api.data
     .map((d) => {
       return d.temperament;
-    }) //["curioso ", "jugueton", "docil"] ["docil, jugueton, curioso ", ""]
+    }) // --> ["docil, jugueton, curioso ", "docil, jugueton, curioso"]
     .join() //unilo con la condicion de separlos con coma
-    .split(",");
+    .split(","); // -->["curioso ", "jugueton", "docil"]
 
   const temps = [];
 
@@ -91,7 +99,7 @@ router.get("/dogs", async (req, res) => {
     if (name) {
       let nameDog = allDogs.filter((dog) =>
         dog.name.toLowerCase().includes(name.toLowerCase())
-      ); //await demas
+      ); 
       nameDog.length
         ? res.status(200).send(nameDog)
         : res
