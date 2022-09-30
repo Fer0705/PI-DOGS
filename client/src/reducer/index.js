@@ -9,19 +9,13 @@ import {
   ORDER_BY_WEIGHT,
   GET_DETAIL,
   GET_CLEAN,
-  // SET_LOADING,
-  // ERROR,
-  // DELETE_DOG
 } from "../actions";
 
 const initialState = {
   dogs: [],
   allDogs: [],
   dogDetail: [],
-  temperaments: [],
-  // loading: true,
-  // error: false,
- 
+  temperaments: [], 
 };
 
 function rootReducer(state = initialState, action) {
@@ -65,7 +59,7 @@ function rootReducer(state = initialState, action) {
           : allDogs.filter((d) => !d.createDb);
       return {
         ...state,
-        dogs: action.payload === "all" ? state.allDogs : createFilter,
+        dogs: action.payload === "all" ? state.allDogs : createFilter
       };
     case ORDER_BY_NAME:
       const sorted =
@@ -116,18 +110,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         dogDetail: action.payload,
       };
-    // case SET_LOADING:
-    //   return {
-    //     ...state,
-    //     loading: true,
-    //   };
 
-    // case ERROR:
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     error: !state.error,
-    //   };
     // case DELETE_DOG:
     //     return{
     //       ...state

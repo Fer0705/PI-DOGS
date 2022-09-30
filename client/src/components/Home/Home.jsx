@@ -42,7 +42,6 @@ export default function Home() {
   function handleFilterByTemperament(e) {
     e.preventDefault();
     dispatch(filterDogsbyTemperament(e.target.value)); //toma como payload el value que elige el usuario
-    // setName(e.target.value)
     //setCurrentPage(1)
   }
 
