@@ -8,8 +8,9 @@ body {
 } */
 
 .container {
-  background-image: url("./fondop.gif");
-  background-size: cover;
+  /* background-image: url("./fondop.gif"); */
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/632/226/393/dog-backgrounds-for-desktop-hd-backgrounds-wallpaper-preview.jpg");
+  background-size:cover;
   position: absolute;
   margin: -1% -1% 0% -0.5%;
   width: 99.8vw;

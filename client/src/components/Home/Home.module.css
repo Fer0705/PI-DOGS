@@ -42,7 +42,7 @@ button:hover {
 }
 
 body {
-  background: url(C:\Users\morta\Desktop\Downloads\PI-Dogs-main\PI-Dogs-main\client\src\img\fondoHome.PNG)
+  background: url(../../img/fondoHome.PNG)
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
