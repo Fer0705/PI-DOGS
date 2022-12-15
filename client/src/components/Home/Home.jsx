@@ -68,9 +68,11 @@ export default function Home() {
   return (
     <div className={style.home}>
       <NavBar />
-
-      <h1 className={style.title}>Welcome to Dog World</h1>
-
+      <br />
+      <br />
+      <div className={style.titlediv}>
+        <h1 className={style.title}>Welcome to Dog World</h1>
+      </div>
       <SearchBar />
       {/*------- ORDEN ALFABETICO----- */}
       <select

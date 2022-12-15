@@ -1,30 +1,91 @@
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.createDog {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  color: #000;
+  font-size: 24px;
+  position: relative;
+  border-radius: 12px;
+  margin-right: 3px;
+}
+
+.createDog::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    orange,
+    beige,
+    yellow,
+    beige,
+    orange,
+    beige,
+    yellow,
+    beige
+  );
+  background-size: 800%;
+  border-radius: 10px;
+  filter: blur(6px);
+  animation: glowing 20s linear infinite;
+}
+
+.createDog:hover {
+  font-weight: bold;
+  background: transparent;
+}
+
 .search {
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 0.7px solid black;
-    width: 20%;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 0.7px solid black;
+  width: 30%;
+  cursor: text;
 }
 
-.searchBut{
-    font-size: 20px;
-    border-radius: 9x;
-    margin-left: 5px;
+.searchBut {
+  cursor: pointer;
+  background: gray.300;
+  color: black;
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 10px;
+  padding: 5px 0px;
+  text-align: center;
+  width: 100px;
+  border-radius: 9px;
 }
 
-.land{
-    font-size: 20px;
-    border-radius: 9x;
-    margin-left: 295px;
+.refresh {
+  cursor: pointer;
+  background: gray.300;
+  color: black;
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 10px;
+  padding: 5px 0px;
+  text-align: center;
+  width: 100px;
+  border-radius: 9px;
 }
-
-
- .refresh{
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 0.7px solid black;
-    width: 8%;
-  } 

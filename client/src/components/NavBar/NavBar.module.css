@@ -1,11 +1,98 @@
-.but{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
   }
 
-  /* .refresh{
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.but {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* padding: 5px; */
+
+}
+
+.logo {
+  display:flex ;
+  justify-content: flex-start;
+}
+
+.land {
+  cursor: pointer;
+  background: transparent;
+  color: #000;
+  display: inline-block;
+  font-size: 1.25rem;
+  /* margin: 20px; */
+  /* padding: 10px 0px; */
+  text-align: center;
+  width: 150px;
+  border-radius: 6px;
+  border: 1px solid black;
+}
+
+.land:hover {
+  color: #fff;
+  background: gray;
+}
+
+.createDog {
+  /* cursor: pointer;
+    background:transparent;
+    color:#000;
+    display: inline-block;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 100px;
+    border-radius: 6px;
+    border: 1px solid black; */
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 12px;
+  width: 100%;
+  margin-right: 3px;
+}
+
+.createDog::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, orange, beige, yellow, beige, orange, beige, yellow, beige);
+  background-size: 800%;
+  border-radius: 10px;
+  filter: blur(6px);
+   animation: glowing 20s linear infinite
+}
+
+.createDog:hover{
+    color: #fff;
+    background: transparent;
+  }
+
+/* .refresh{
     font-size: 1rem;
     border-radius: 10px;
     cursor: pointer;

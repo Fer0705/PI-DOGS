@@ -1,14 +1,44 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inspiration&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Akaya+Kanadaka&family=Dancing+Script:wght@700&display=swap');
+/* .header {
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+margin: 0%;
+padding: 0%;
+} */
+*{
+  margin: 0;
+  padding: 0;
+}
+.titlediv{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+margin-left: 100px;
+}
 
 select {
-  border-radius: 10px;
+  /* border-radius: 10px;
   padding: 5px;
   font-size: 1rem;
+  cursor: pointer; */
   cursor: pointer;
+  background: white;
+  color:gray;
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 20px;
+  padding: 10px 0px;
+  text-align: center;
+  width: 300px;
+  border-radius: 6px;
 }
 select:hover {
-  background-color: #e4ccc3;
+ 
+  background: gray;
+  color:#fff;
+  font-weight: bold;
 }
 
 .title {

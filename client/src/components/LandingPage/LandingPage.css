@@ -8,13 +8,13 @@ body {
 } */
 
 .container {
-  background-image: url("./fondop.gif");
-  /* background-image: url("."); */
+  /* background-image: url("./fondop.gif"); */
+  background-image: url("https://wallpapercave.com/wp/wp3114102.jpg");
   background-size:cover;
   position: absolute;
   margin: -1% -1% 0% -0.5%;
-  width: 99.8vw;
-  height: 99.8vh;
+  width: 100.5vw;
+  height: 101.2vh;
   background-repeat: no-repeat;
   background-position: absolute;
   /* top: 0;
@@ -38,8 +38,8 @@ body {
 }
 
 .footprint {
-  margin-left: 1100px;
-  margin-top: 200px;
+  margin-left: 700px;
+  margin-top: 250px;
   border-radius: 9999px;
 }
  
