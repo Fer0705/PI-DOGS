@@ -42,13 +42,13 @@ export default function Home() {
   function handleFilterByTemperament(e) {
     e.preventDefault();
     dispatch(filterDogsbyTemperament(e.target.value)); //toma como payload el value que elige el usuario
-    //setCurrentPage(1)
+    setCurrentPage(1);
   }
 
   function handleFilterCreated(e) {
     e.preventDefault();
     dispatch(filterCreated(e.target.value));
-    //setCurrentPage(1)
+    setCurrentPage(1);
   }
 
   function handleOrderByName(e) {
@@ -146,11 +146,6 @@ export default function Home() {
             );
           })}
       </div>
-      {/* <Paginado
-        dogsForPage={dogsForPage}
-        allDogs={allDogs.length} // .length xq necesito un valor numerico
-        paginado={paginado}
-      /> */}
     </div>
   );
 }
