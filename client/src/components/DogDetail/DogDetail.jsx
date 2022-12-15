@@ -34,6 +34,7 @@ export default function DogDetail() {
         Life span:{" "}
         {detail.createDb ? `${detail.life_span}  years` : detail.life_span}
       </h2>
+      {/* <h2>Creado Por: {detail.creadoPor}</h2> */}
 
       <button onClick={handleClick}>BACK HOME</button>
     </div>

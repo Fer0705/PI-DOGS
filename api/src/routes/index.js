@@ -149,6 +149,7 @@ router.post("/dogs", async (req, res) => {
     image,
     temperament,
     createDb,
+    // creadoPor,
   } = req.body;
 
   if (
@@ -173,6 +174,7 @@ router.post("/dogs", async (req, res) => {
         life_span,
         image,
         createDb,
+        // creadoPor,
       });
       const temp = await Temperament.findAll({
         where: {
@@ -186,14 +188,6 @@ router.post("/dogs", async (req, res) => {
     }
   }
 });
-
-// router.get("/temperaments", async (req, res) => {
-//   await getTemperament();
-//   const allTemperament = await Temperament.findAll();
-//   const nameTemp = await allTemperament.map((t) => t.name);
-//   res.status(200).json(nameTemp);
-//   console.log(nameTemp);
-// });
 
 router.get("/temperaments", async (req, res) => {
   try {
@@ -220,5 +214,4 @@ router.get("/temperaments", async (req, res) => {
 //     res.status(400).json(error);
 //   }
 // });
-
 module.exports = router;
