@@ -15,7 +15,7 @@ export const DELETE_DOG = "DELETE_DOG";
 
 export function getAllDogs() {
   return async function (dispatch) {
-    let dogs = await axios.get("http://localhost:3001/dogs");
+    let dogs = await axios.get("/dogs");
     return dispatch({
       type: GET_ALL_DOGS,
       payload: dogs.data, //.origin
@@ -25,7 +25,7 @@ export function getAllDogs() {
 
 export function getTemperament() {
   return async function (dispatch) {
-    let temp = await axios.get("http://localhost:3001/temperaments");
+    let temp = await axios.get("/temperaments");
     return dispatch({
       type: GET_TEMPERAMENT,
       payload: temp.data,
@@ -36,7 +36,7 @@ export function getTemperament() {
 export function postDog(payload) {
   //toda la data para crear el dog
   return async function (dispatch) {
-    let resp = await axios.post("http://localhost:3001/dogs", payload);
+    let resp = await axios.post("/dogs", payload);
     return resp;
   };
 }
@@ -45,7 +45,7 @@ export function getDogName(name) {
   console.log(name);
   return async function (dispatch) {
     try {
-      let dogName = await axios.get(`http://localhost:3001/dogs?name=${name}`);
+      let dogName = await axios.get(`/dogs?name=${name}`);
       return dispatch({
         type: GET_DOG_NAME,
         payload: dogName.data,
@@ -89,7 +89,7 @@ export function orderByWeight(payload) {
 export function getDetail(id) {
   return async function (dispatch) {
     try {
-      let info = await axios.get(`http://localhost:3001/dogs/${id}`);
+      let info = await axios.get(`/dogs/${id}`);
       return dispatch({
         type: GET_DETAIL,
         payload: info.data,
