@@ -2,14 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogName, getAllDogs } from "../../actions";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import style from "../SearchBar/SearchBar.module.css";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
-
 
   function handleClick(e) {
     e.preventDefault();
@@ -26,12 +25,12 @@ export default function SearchBar() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(getDogName(name));
-    
-   form.reset();
+
+    form.reset();
   }
 
   return (
-    <div >
+    <div>
       <nav>
         <form id="form" className={style.form}>
           <input
@@ -50,18 +49,17 @@ export default function SearchBar() {
             SEARCH
           </button>
 
-          {/* <button
-        className={style.refresh}
-        onClick={(e) => {
-          handleClick(e);
-        }}
-      >
-        REFRESH
-      </button> */}
-      <Link to="/dog">
-        <button className={style.createDog}>CREATE DOG</button>
-      </Link>
-            
+          <button
+            className={style.refresh}
+            onClick={(e) => {
+              handleClick(e);
+            }}
+          >
+            REFRESH
+          </button>
+          <Link to="/dog">
+            <button className={style.createDog}>CREATE DOG</button>
+          </Link>
         </form>
       </nav>
     </div>

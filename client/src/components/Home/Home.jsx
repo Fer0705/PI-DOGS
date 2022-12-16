@@ -17,6 +17,9 @@ import SearchBar from "../SearchBar/SearchBar";
 import NavBar from "../NavBar/NavBar";
 
 export default function Home() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs); // con useSelector guardame en allDogs todo lo que esta en el estado de dogs
   const allTemps = useSelector((state) => state.temperaments);

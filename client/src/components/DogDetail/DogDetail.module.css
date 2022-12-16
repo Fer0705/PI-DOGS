@@ -1,38 +1,20 @@
-/* *{
-margin: 9px;
-}
-.detail {
-  
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
 
-.cardDetail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: auto;
-    font-family: cursive;
-}
-
-/* .cardDetail h2{
-    text-decoration:underline;
-} */
 *{
 font-family: cursive;
 }
 .photo {
     border-radius: 10px;
     border: 2px solid black;
+    /* width: 85%;
+    height: 85%; */
 }
 
-.photo:hover {
+/* .photo:hover {
     width: 85%;
     height: 85%;
     cursor: pointer;
     margin-left: 10px;
-}
+} */
 
 .wrapper {
     display: grid;

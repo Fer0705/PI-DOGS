@@ -18,6 +18,7 @@ export default function Paginated({
       <ul className="paginado">
         {pageNumbers &&
           pageNumbers.map((n) => (
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a
               key={n}
               onClick={() => paginated(n)}
