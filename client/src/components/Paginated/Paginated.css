@@ -7,6 +7,7 @@
   cursor: pointer;
 }
 
+
 .items {
   background-color: beige;
   border-radius: 9px;
@@ -14,8 +15,6 @@
   padding: 7px;
   font-size: 1rem;
   cursor: pointer;
-  /* grid-row-start: 1; */
-  /* grid-row-start: 3; */
 }
 
 .items:hover {
@@ -31,18 +30,9 @@
   background-color: rgb(255, 183, 1);
 }
 
-/* .num {
-    list-style:none;
-    text-decoration: none;
-    border: 2px solid black;
-    border-radius: 9px;
-    padding: 5px;
-    color:black;
-    background-color: beige;
-    transition: 0.3s;
+@media screen and (max-width: 600px) {
+  .paginado {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
-
-.num:hover {
-    background-color: #b08968;
-    color: black
-} */

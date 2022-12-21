@@ -104,7 +104,6 @@ export default function Home() {
         }}
       >
         <option hidden>FILTER BY TEMPERAMENT</option>
-
         {allTemps &&
           allTemps.map((t) => (
             <option key={t} value={t}>

@@ -25,7 +25,7 @@ export default function DogDetail() {
     <div className={style.wrapper}>
       <div className="one">
         <br />
-        <h1 style={{ fontSize: "3.5rem", marginLeft: "1px" }}>{detail.name}</h1>
+        <h1>{detail.name}</h1>
         <br />
         <br />
         <img
@@ -39,7 +39,7 @@ export default function DogDetail() {
       <div className="two">
         <br />
         <br />
-        <h2 style={{ color: "gray", textDecoration: "underline" }}>
+        <h2 style={{ color: "white", WebkitTextStroke: "1px black" }}>
           Temperaments:
         </h2>
         <br />
@@ -47,15 +47,24 @@ export default function DogDetail() {
           {detail.temperament || detail.temperaments?.map((e) => e.name + " ")}
         </h2>
         <br />
-        <h2 style={{ color: "gray", textDecoration: "underline" }}>Height: </h2>
+        <h2 style={{ color: "white", WebkitTextStroke: "1px black" }}>
+          Height:{" "}
+        </h2>
         <br />
         <h2>{`${detail.heightMin} - ${detail.heightMax} Cm`}</h2>
         <br />
-        <h2 style={{ color: "gray", textDecoration: "underline" }}>Weight:</h2>
+        <h2 style={{ color: "white", WebkitTextStroke: "1px black" }}>
+          Weight:
+        </h2>
         <br />
         <h2>{`${detail.weightMin} - ${detail.weightMax} Kg`}</h2>
         <br />
-        <h2 style={{ color: "gray", textDecoration: "underline" }}>
+        <h2
+          style={{
+            color: "white",
+            WebkitTextStroke: "1px black",
+          }}
+        >
           Life span:
         </h2>
         <br />

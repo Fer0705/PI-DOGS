@@ -19,10 +19,6 @@ margin-left: 100px;
 }
 
 select {
-  /* border-radius: 10px;
-  padding: 5px;
-  font-size: 1rem;
-  cursor: pointer; */
   cursor: pointer;
   background: white;
   color:gray;
@@ -90,15 +86,25 @@ body {
     width: 80%;
   }
 
-  .paginado{
+  /* .paginado{
     flex-direction: row;
     justify-content: center;
     width: 90%;
+  } */
+
+  .title{
+    font-size: 80px;
+    text-align:left;
+    margin-left: -90px;
   }
  
+  select{
+    font-size: 1rem;
+    width: 230px;
+    margin: 10px;
+    padding: 5px 0px;
+  }
+
 }
-/* .paginado {
-  display: flex;
-  flex-direction: column;
-} */
+
 
