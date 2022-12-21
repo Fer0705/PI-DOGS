@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Akaya+Kanadaka&family=Dancing+Script:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Akaya+Kanadaka&family=Dancing+Script:wght@700&display=swap'); */
 
 *{
   margin: 0;
@@ -34,12 +34,9 @@ select:hover {
 
 .title {
   text-align: center;
-  /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9770, 0 0 40px #ff9770,
-    0 0 50px #ff9770, 0 0 60px #ff9770, 0 0 70px #ff9770; */
-  font-size: 120px;
-  /* font-family: "Indie Flower", cursive; */
-  font-family: 'Dancing Script', cursive;
+  font-size: 100px;
   margin-top: -45px;
+  -webkit-text-stroke: 2px white;
 }
 
 button {
@@ -80,12 +77,6 @@ body {
   .homeCard img {
     width: 80%;
   }
-
-  /* .paginado{
-    flex-direction: row;
-    justify-content: center;
-    width: 90%;
-  } */
 
   .title{
     font-size: 80px;
