@@ -1,16 +1,11 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inspiration&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Akaya+Kanadaka&family=Dancing+Script:wght@700&display=swap');
-/* .header {
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-margin: 0%;
-padding: 0%;
-} */
+
 *{
   margin: 0;
   padding: 0;
+font-family: cursive;
 }
+
 .titlediv{
   display: flex;
 flex-direction: row;

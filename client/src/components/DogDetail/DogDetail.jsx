@@ -5,6 +5,9 @@ import { getClean, getDetail } from "../../actions";
 import style from "../DogDetail/DogDetail.module.css";
 
 export default function DogDetail() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const dispatch = useDispatch();
   const { id } = useParams();
   const history = useHistory();
